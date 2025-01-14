@@ -1,0 +1,19 @@
+- name: play level variables
+  hosts: local
+  connection: local
+  vars:                   # global level variables or playlevel
+    course: "devops with aws"
+    duration: 120 hrs
+    trainer: siva
+  tasks:
+  - name: print global variables
+    ansible.builtin.debug:
+      msg: "course is {{course}}, duration is {{duration}}, trainer is {{trainer}}"
+  
+  - name: print task level variables
+    vars:                     # Task level or local variables
+      course: Ansible
+      duration: 5hrs
+    ansible.builtin.debug:
+      msg: "course is {{course}}, duration is {{duration}}, trainer is{{trainer}}"
+      

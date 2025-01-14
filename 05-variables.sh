@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    course: Devops with AWS
+    course: "Devops with AWS"
     duration: 120hrs
     trainer: "Ravi Prakash"
   tasks:
