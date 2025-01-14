@@ -1,6 +1,6 @@
 - name: PLAY1
-  hosts: localhost
-  connection: local
+  hosts: local    # in inventory under group local
+  connection: local # managing its own node, no need of credentials
   tasks:
   - name: PLAY1 and TASK1
     ansible.builtin.debug:
