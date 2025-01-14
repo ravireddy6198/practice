@@ -1,7 +1,7 @@
 - name: vars in files
   hosts: local
   connection: local
-  vars_files:
+  vars_files:           # list of files
   - course.yaml
   - trainer.yaml
   tasks:
