@@ -44,28 +44,28 @@ echo "Script started executing at: $TIMESTAMP" &>>$log_file_name
 CHECK_ROOT
 
 dnf install nginx -y  &>>$log_file_name
-VALIDATE $? "Installing Nginx Server"
+validate $? "Installing Nginx Server"
 
 systemctl enable nginx &>>$log_file_name
-VALIDATE $? "Enabling Nginx server"
+validate $? "Enabling Nginx server"
 
 systemctl start nginx &>>$log_file_name
-VALIDATE $? "Starting Nginx Server"
+validate $? "Starting Nginx Server"
 
 rm -rf /usr/share/nginx/html/* &>>$log_file_name
-VALIDATE $? "Removing existing version of code"
+validate $? "Removing existing version of code"
 
 curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$log_file_name
-VALIDATE $? "Downloading Latest code"
+validate $? "Downloading Latest code"
 
 cd /usr/share/nginx/html
-VALIDATE $? "Moving to HTML directory"
+validate $? "Moving to HTML directory"
 
 unzip /tmp/frontend.zip &>>$log_file_name
-VALIDATE $? "unzipping the frontend code"
+validate $? "unzipping the frontend code"
 
 cp /home/ec2-user/practice/practice-shell-expense/expense.conf /etc/nginx/default.d/expense.conf
-VALIDATE $? "Copied expense config"
+validate $? "Copied expense config"
 
 systemctl restart nginx &>>$log_file_name
-VALIDATE $? "Restarting nginx"
+validate $? "Restarting nginx"
