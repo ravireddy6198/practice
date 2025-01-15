@@ -83,12 +83,12 @@ validate $? "Setting up the transactions schema and tables"
 
 
 systemctl daemon-reload &>>$log_file_name
-VALIDATE $? "Daemon Reload"
+validate $? "Daemon Reload"
 
 systemctl enable backend &>>$log_file_name
-VALIDATE $? "Enabling backend"
+validate $? "Enabling backend"
 
 systemctl restart backend &>>$log_file_name
-VALIDATE $? "Starting Backend"
+validate $? "Starting Backend"
 
 
