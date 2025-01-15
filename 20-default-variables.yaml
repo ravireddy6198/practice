@@ -5,3 +5,9 @@
   - name: print default variables
     ansible.builtin.debug:
       msg: "{{person | default('Kiran')}}"
+
+  - name: convert string to list
+    vars:
+      fruits: "apple, mango, guva"
+    ansible.builtin.debug:
+      msg: "fruit list : {{fruits | split(',')}}"
