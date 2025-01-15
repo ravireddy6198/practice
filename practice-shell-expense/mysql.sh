@@ -46,7 +46,7 @@ validate $? " Mysql enable"
 systemctl start mysqld &>>$log_file_name
 validate $? " Mysql started"
 
-mysql -h 172.31.29.83 -u root -p<password> -e 'show databases;' &>>$log_file_name
+mysql -h 172.31.29.83 -u root -pExpenseApp@1 -e 'show databases;' &>>$log_file_name
 
 if [ $? -ne 0 ]
 then
