@@ -35,4 +35,10 @@
       name: "ravi prakash reddy"
     ansible.builtin.debug:
       msg: "upper case name : {{name | upper}}"
+
+  - name: min and max
+    vars:
+      num: [1,3,43,567,98554]
+    ansible.builtin.debug:
+      msg: "min is : {{num | min}},   max is : {{num | max}}"
   
