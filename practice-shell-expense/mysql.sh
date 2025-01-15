@@ -32,26 +32,26 @@ check_root(){
     fi
 }
 
-echo " script execution started :$timestamp &>>$log_file_name
+echo " script execution started :$timestamp"
 
 
 check_root
 
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$log_file_name
 validate $? " Mysql installation"
 
-systemctl enable mysqld
+systemctl enable mysqld &>>$log_file_name
 validate $? " Mysql enable"
 
-systemctl start mysqld
+systemctl start mysqld &>>$log_file_name
 validate $? " Mysql started"
 
-mysql -h <host-address> -u root -p<password> -e 'show databases;'
+mysql -h <host-address> -u root -p<password> -e 'show databases;' &>>$log_file_name
 
 if [ $? -ne 0 ]
 then
     echo "MySQL Root password not setup"
-    mysql_secure_installation --set-root-pass ExpenseApp@1
+    mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$log_file_name
     validate $? "settingup root password"
 else
      echo "MySQL Root password already setup ... skipping"

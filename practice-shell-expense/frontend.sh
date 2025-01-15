@@ -32,7 +32,7 @@ check_root(){
     fi
 }
 
-echo " script execution started :$timestamp &>>$log_file_name
+echo " script execution started :$timestamp"
 
 
 check_root
