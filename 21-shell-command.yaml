@@ -1,0 +1,6 @@
+- name: shell vs command
+  hosts: web
+  connection: local
+  tasks:
+  - name: execute ls command
+    ansible.builtin.command: ls -ltr > /tmp/varun.txt
