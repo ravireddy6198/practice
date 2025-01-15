@@ -73,7 +73,7 @@ cd /app
 npm install
 validate $? " installing packages using npm"
 
-cp /home/ec2-user/practice-shell-expense/backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/practice/practice-shell-expense/backend.service /etc/systemd/system/backend.service
 
 dnf install mysql -y 
 validate $? "Installing MySQL Client"
