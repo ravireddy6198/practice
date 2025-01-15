@@ -7,10 +7,10 @@
     ansible.builtin.shell: ls -ltr > /tmp/varun.txt
 
   - name: execute ls in command module
-    #ansible.builtin.command: ls -ltr > /tmp/varun.txt
-    ansible.builtin.command: ls -ltr 
+    ansible.builtin.command: ls -ltr > /tmp/varun.txt
+    #ansible.builtin.command: ls -ltr 
     register: command_reult
 
   - name: print the output
     ansible.builtin.debug:
-      msg: "{{command-_result}}"
+      msg: "{{command_result}}"
