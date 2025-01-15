@@ -78,7 +78,7 @@ cp /home/ec2-user/practice/practice-shell-expense/backend.service /etc/systemd/s
 dnf install mysql -y &>>$log_file_name
 validate $? "Installing MySQL Client"
 
-mysql -h mysql.daws82s.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file_name
+mysql -h 172.31.29.83 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file_name
 validate $? "Setting up the transactions schema and tables"
 
 

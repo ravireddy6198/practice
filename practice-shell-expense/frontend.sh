@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-mkdir -p /home/ravi/expense_logs
+
 
 log_folder="/home/ravi/expense_logs"
 log_file=$(echo $0 | cut -d "." -f1)
